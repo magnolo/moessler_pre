@@ -164,10 +164,7 @@
 			resizeStuff()
 		}, 200); //200 is time in miliseconds
 	});
-  $('#video').YTPlayer({
-    fitToBackground: true,
-    videoId: 'ndzanH_Mrhc'
-});
+
 
 })(jQuery);
 
