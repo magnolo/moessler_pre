@@ -1,12 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="de">
 
 <head>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>preSite</title>
-
+  <title>Ferien-Erlebniswelt Mössler</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,700,700italic,600,600italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
@@ -19,6 +21,7 @@
 
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/component.css" />
+  <link rel="stylesheet" href="fonts/flaticon.css" />
   <link rel="stylesheet" href="styles/bg-slider.css" />
   <link rel="stylesheet" href="scripts/clock/css/clock.css">
   <link rel="stylesheet" href="styles/main.css">
@@ -30,146 +33,505 @@
   <!-- endbuild -->
 </head>
 
-<body onload="init()" class="snowflakes">
-  <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  <script src="scripts/vendor/ThreeCanvas.js" type="text/javascript" charset="utf-8"></script>
+<body>
+  <!--<script src="scripts/vendor/ThreeCanvas.js" type="text/javascript" charset="utf-8"></script>
   <script src="scripts/vendor/snow.js" type="text/javascript" charset="utf-8"></script>
-  <script src="scripts/flakes.js"></script>
 
+
+
+  <script>
+
+    var SCREEN_WIDTH = window.innerWidth;
+    var SCREEN_HEIGHT = window.innerHeight;
+
+    var container;
+
+    var particle;
+
+    var camera;
+    var scene;
+    var renderer;
+
+    var mouseX = 0;
+    var mouseY = 0;
+
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+    var particles = [];
+    var particleImage = new Image();//THREE.ImageUtils.loadTexture( "images/ParticleSmoke.png" );
+    particleImage.src = 'images/snow.png';
+
+
+
+    function init() {
+
+      container = document.createElement('div');
+      container.setAttribute('id', 'snowflakes');
+      document.body.appendChild(container);
+
+      camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+      camera.position.z = 1000;
+
+      scene = new THREE.Scene();
+      scene.add(camera);
+
+      renderer = new THREE.CanvasRenderer();
+      renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+      var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+
+      for (var i = 0; i < 100; i++) {
+
+        particle = new Particle3D( material);
+        particle.position.x = Math.random() * 2000 - 1000;
+        particle.position.y = Math.random() * 2000 - 1000;
+        particle.position.z = Math.random() * 2000 - 1000;
+        particle.scale.x = particle.scale.y =  1;
+        scene.add( particle );
+
+        particles.push(particle);
+      }
+
+      container.appendChild( renderer.domElement );
+
+
+      document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+      document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+      document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+      setInterval( loop, 1000 / 38 );
+
+    }
+
+    function onDocumentMouseMove( event ) {
+
+      mouseX = event.clientX - windowHalfX;
+      mouseY = event.clientY - windowHalfY;
+    }
+
+    function onDocumentTouchStart( event ) {
+
+      if ( event.touches.length == 1 ) {
+
+        event.preventDefault();
+
+        mouseX = event.touches[ 0 ].pageX - windowHalfX;
+        mouseY = event.touches[ 0 ].pageY - windowHalfY;
+      }
+    }
+
+    function onDocumentTouchMove( event ) {
+
+      if ( event.touches.length == 1 ) {
+
+        event.preventDefault();
+
+        mouseX = event.touches[ 0 ].pageX - windowHalfX;
+        mouseY = event.touches[ 0 ].pageY - windowHalfY;
+      }
+    }
+
+    //
+
+    function loop() {
+
+    for(var i = 0; i<particles.length; i++)
+      {
+
+        var particle = particles[i];
+        particle.updatePhysics();
+
+        with(particle.position)
+        {
+          if(y<-1000) y+=2000;
+          if(x>1000) x-=2000;
+          else if(x<-1000) x+=2000;
+          if(z>1000) z-=2000;
+          else if(z<-1000) z+=2000;
+        }
+      }
+
+      camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+      camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+      camera.lookAt(scene.position);
+
+      renderer.render( scene, camera );
+
+
+    }
+  </script>-->
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <ul class="cb-slideshow">
+    <li>
+      <span>Image 01</span>
+    </li>
+    <li>
+      <span>Image 02</span>
+    </li>
+    <li>
+      <span>Image 03</span>
+    </li>
+    <li>
+      <span>Image 04</span>
+    </li>
+    <li>
+      <span>Image 05</span>
+    </li>
+    <li>
+      <span>Image 05</span>
+    </li>
+  </ul>
   <section class="main-menu-container">
-    <div class="show_toggle">
-      <a href="#"></a>
+    <div class="show_toggle"><a href="#"></a></div>
+    <div class="logo">
+        <img src="images/logo-full-white.png" alt="An awesome picture">
     </div>
     <ul class="main-menu">
       <li>
-        <a href="#" class="home-link">Home</a>
+        <a href="#" data-page="anfragen"><i class="flaticon-book"></i> Anfragen/Buchen</a>
       </li>
       <li>
-        <a href="#" data-page="services">Services</a>
+        <a href="#" data-page="schwimmbad"><i class="flaticon-pool"></i> Schwimmbad Camping</a>
       </li>
       <li>
-        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="see"><i class="flaticon-lake"></i> Seecamping</a>
       </li>
       <li>
-        <a href="#" data-page="contacts">Kontakt</a>
+        <a href="#" data-page="haus"><i class="flaticon-house"></i> Landhaus Michelpauli</a>
+      </li>
+      <li>
+        <a href="#" data-page="contacts"><i class="flaticon-direction"></i> Kontakt &amp; Anreise</a>
       </li>
     </ul>
+    <div class="copyright">
+      &copy; 2016 by Camping Mössler GmbH
+    </div>
   </section>
 
-
   <section class="mainarea">
-    <div id="clock" class="active">
+    <div id="clock" class="active" style="margin-top:-162px">
       <div class="clock-container">
         <div id="time-container-wrap">
           <div id="time-container">
-            <div class="numbers-container"></div>
-            <span id="ticker" class="clock-label">TICKER</span>
-            <span id="timelable" class="clock-label">BIS ZUM NEUEN JAHR</span>
-            <span id="timeleft" class="clock-label">COUNTDOWN</span>
-            <figure id="canvas"></figure>
+            <h3 style="margin-bottom: 5px;text-transform: uppercase;text-shadow: 1px 1px 1px #000;font-weight: 400;">Ferien-Erlebniswelt</h3>
+            <figure id="logo">
+              <img src="images/logo_single_white.png" alt="An awesome picture">
+            </figure>
           </div>
         </div>
       </div>
-      <h3>Our website is launching soon</h3>
-      <form action="#" class="subscribe" id="subscribe">
-        <input type="email" placeholder="Enter your email" class="email form_item requiredField" name="subscribe_email" />
-        <input type="submit" class='form_submit' value="subscribe" />
-        <div id="form_results"></div>
-      </form>
+      <h3>Unsere neue Webseite steht ihnen in Kürze zur Verfügung</h3>
+      <a href="#" data-page="anfragen" class="btn to-link">Buchungsanfrage</a>
     </div>
     <div class="mainarea-content">
-      <div id="services" data-page="services" class="side-page side-left went-left">
+      <div id="anfragen" data-page="anfragen" class="side-page side-left went-left">
         <div class="container">
-          <h2 class="title">What we do</h2>
-          <ul class="services">
-            <li>
-              <img src="images/icons/promotion-icon.png" alt="" />
-              <p>
-                Promotion
-              </p>
-            </li>
-            <li>
-              <img src="images/icons/web-desing-icon.png" alt="" />
-              <p>
-                Web Design
-              </p>
-            </li>
-            <li>
-              <img src="images/icons/photography-icon.png" alt="" />
-              <p>
-                Photography
-              </p>
-            </li>
-          </ul>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="#">Excepteur sint occaecat</a> cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-            unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.
-          </p>
+          <h2 class="title">Buchungsanfrage</h2>
+          <div class="form-container">
+            <form Id="qfindformId"></form>
+          </div>
         </div>
       </div>
-      <div id="about" data-page="about" class="side-page active">
+      <div id="schwimmbad" data-page="schwimmbad" class="side-page side-left went-left">
         <div class="container">
-          <h2 class="title">Who we are</h2>
+
+          <h2 class="title">SchwimmbadCamping</h2>
+          <img class="big-image" src="images/start_schwimmbad.jpg" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nibh at libero fringilla adipiscing nec ut leo. Etiam nec purus arcu. Morbi sollicitudin at risus id malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Etiam sed tincidunt arcu. Donec molestie ante sapien, sed molestie est euismod eget. Maecenas ac metus accumsan, scelerisque massa sed, porta est. Aliquam ut mollis mi. Cras id vulputate purus, ac sollicitudin ante.
-          </p>
-          <p>
-            Integer condimentum eu lectus quis semper. Sed id metus magna. Morbi ultrices magna id euismod hendrerit. Pellentesque nec mattis odio, vitae laoreet metus. Sed eget sollicitudin est, vitae accumsan nisi. Fusce consequat imperdiet venenatis. Integer mollis
-            hendrerit facilisis. Praesent vel mattis enim. Integer fringilla et urna vitae rutrum.
-          </p>
+          Der Schwimmbad Camping Mößler ist eine parkmäßig angelegt Campinganlage mit ca. 200 Stellplätzen. Direkt am Campingplatz befinden sich ein neues Erlebnisschwimmbad (Wassertemperatur ca. 30 °C) sowie eine neue (2011) Wellnessanlage mit Ruheraum.</p>
         </div>
       </div>
-      <div id="contacts" data-page="contacts" class="side-page side-right went-right">
+      <div id="see" data-page="see" class="side-page side-left went-left">
         <div class="container">
-          <h2 class="title">Get in touch</h2>
+          <h2 class="title">Seecamping</h2>
+            <img class="big-image" src="images/start_seecamping.jpg" />
           <p>
-            Lexington Avenue · New York, NY
-            <br> P: (123) - 456 789 · email@domain.com
+          Der Seecamping Mößler ist ein kleiner Campingpark mit rund 70 parzellierten Stellplätzen und großzügigen Sanitäranlagen (Komfortduschen, alle Waschbecken in Kabinen) bietet familiäre Atmosphäre.</p>
+        </div>
+      </div>
+      <div id="haus" data-page="haus" class="side-page side-left went-left">
+        <div class="container">
+          <h2 class="title">Landhaus Michpauli</h2>
+          <img class="big-image" src="images/start_landhaus.jpg" />
+        <p>
+          <p>
+          ist ca. 1 km vom Kärntens tiefstem Badesee (Temperatur Juli/August ca. 26 ° C), dem Millstätter See, entfernt und ist nahe dem Ortskern von Döbriach. Die zwei Appartements bieten jeweils Platz für 4 bis 5 Personen.m .</p>
+        </div>
+      </div>
+      <div id="contacts" data-page="contacts" class="side-page side-left went-left">
+        <div class="container">
+          <h2 class="title">Kontakt</h2>
+          <p>
+            Glanzerstraße 24 · 9873 Döbriach, Kärnten
+            <br>
+            T: +43 4246 7735 · camping@moessler.at
           </p>
-          <form id='contacts_form' action="#" class="contact-list">
-            <div class="field-row">
-              <input class="form_item" type="text" id="name" name="name" placeholder="Name" />
-            </div>
-            <div class="field-row">
-              <input class="form_item" type="email" id="email" name="email" placeholder="E-mail" />
-            </div>
-            <div class="field-row">
-              <input class="form_item" type="text" id="message" name="message" placeholder="Message" />
-            </div>
-            <div class="field-row">
-              <input type="submit" class="form_submit" value="Send Message" />
-            </div>
-            <div id="contact_results"></div>
-          </form>
+        <iframe style="max-width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10930.249255216133!2d13.645876055165138!3d46.77352312284829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477099e921f17d31%3A0xd1939c892b5fdb2b!2sSchwimmbad+Camping+M%C3%B6ssler!5e0!3m2!1sde!2sat!4v1452588035616" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<h2 class="title">Impressum</h2>
+        <table class="form_layout_detail" style="width:100%" summary="Felddarstellung">
+
+
+        <tbody><tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl01_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl01_genericLabel_helpLinkLabel1" title="Firmenname" class="transparent_label_info">Firmenname</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Camping Mößler GmbH
+            </td>
+        </tr>
+
+
+
+
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl04_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl04_genericLabel_helpLinkLabel1" title="Unternehmensbezeichnung" class="transparent_label_info">Unternehmensbezeichnung</span></span>
+
+    <span class="hinweis">(selbstgewählt)</span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Camping Mößler GmbH
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl05_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl05_genericLabel_helpLinkLabel1" title="Adresse" class="transparent_label_info">Adresse</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Glanzerstraße 24, 9873 Döbriach
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl06_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl06_genericLabel_helpLinkLabel1" title="Telefon *" class="transparent_label_info">Telefon *</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                +43 (4246) 77 35
+            </td>
+        </tr>
+
+
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl08_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl08_genericLabel_helpLinkLabel1" title="Fax *" class="transparent_label_info">Fax *</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                +43 (4246) 77 35 13
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl09_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl09_genericLabel_helpLinkLabel1" title="Web" class="transparent_label_info">Web</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                <a href="http://www.moessler.at/" id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl09_genericField_ctl00_outputLink" target="_blank">http://www.moessler.at</a>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl10_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl10_genericLabel_helpLinkLabel1" title="E-Mail **" class="transparent_label_info">E-Mail **</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                <a href="mailto:camping@moessler.at" id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl10_genericField_ctl00_outputLink" target="_blank">camping@moessler.at</a>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl11_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl11_genericLabel_helpLinkLabel1" title="UID-Nummer" class="transparent_label_info">UID-Nummer</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                ATU26335800
+            </td>
+        </tr>
+
+
+
+
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl14_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl14_genericLabel_helpLinkLabel1" title="Allgemeine Geschäftsbedingungen" class="transparent_label_info">Allgemeine Geschäftsbedingungen</span></span>
+
+    <span class="hinweis">(Link)</span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                <a href="http://www.seecamping-moessler.at/index.php/component/content/article/57" id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl14_genericField_ctl00_outputLink" target="_blank">http://www.seecamping-moessler.at/index.php/component/content/article/57</a>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl15_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl15_genericLabel_helpLinkLabel1" title="Firmenbuchnummer" class="transparent_label_info">Firmenbuchnummer</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                91939f
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl16_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl16_genericLabel_helpLinkLabel1" title="Firmengericht" class="transparent_label_info">Firmengericht</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Landesgericht Klagenfurt
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl17_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl17_genericLabel_helpLinkLabel1" title="Behörde gem. ECG" class="transparent_label_info">Behörde gem. ECG</span></span>
+
+    <span class="hinweis">(E-Commerce Gesetz)</span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Bezirkshauptmannschaft Spittal an der Drau
+            </td>
+        </tr>
+
+
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl19_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl19_genericLabel_helpLinkLabel1" title="Weitere Aufsichtsbehörde" class="transparent_label_info">Weitere Aufsichtsbehörde</span></span>
+
+    <span class="hinweis">(gem. ECG)</span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Keine
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl20_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl20_genericLabel_helpLinkLabel1" title="Anwendbare Rechtsvorschriften" class="transparent_label_info">Anwendbare Rechtsvorschriften</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Kärntner Campingplatzgesetz<br>Handeslgewerbe<br>Gastgewerbe in der Betriebsform Restaurant
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl21_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl21_genericLabel_helpLinkLabel1" title="Rechtsform" class="transparent_label_info">Rechtsform</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                GmbH
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl22_genericLabel_DescriptionLabel" style="font-weight:bold;"><span id="ctl00_ContentPlaceHolder1_ecgBoxes_genericCategoriesRepeater_ctl00_genericFields_genericFieldsRepeater_ctl22_genericLabel_helpLinkLabel1" title="Sonstige Informationen nach §14 UGB" class="transparent_label_info">Sonstige Informationen nach §14 UGB</span></span>
+
+
+
+            </td>
+            <td class="breit60_detail">
+                Keine
+            </td>
+        </tr>
+
+
+
+
+        </tbody></table>
         </div>
       </div>
     </div>
-    <a class="close" href="#">
-      <img alt="" src="images/close.png">
-    </a>
+    <a class="close" href="#"><img alt="" src="images/close.png"></a>
   </section>
   <section class="social-container">
     <ul class="social">
       <li>
-        <a href="#">
-          <img src="images/icons/twitter-icon.png" alt="" />
-        </a>
+        <a href="https://www.youtube.com/channel/UC7yRQnxvnk_zTCAWyiXKODQ"><img src="images/icons/youtube-icon.png" alt="" /></a>
       </li>
       <li>
-        <a href="#">
-          <img src="images/icons/youtube-icon.png" alt="" />
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="images/icons/facebook-icon.png" alt="" />
-        </a>
+        <a href="https://de-de.facebook.com/campingmoessler"><img src="images/icons/facebook-icon.png" alt="" /></a>
       </li>
     </ul>
   </section>
@@ -188,6 +550,7 @@
   <script src="scripts/main.js"></script>
 
 
+
   <script src="scripts/clock/js/svg.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="scripts/clock/js/svg.easing.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="scripts/clock/js/svg.clock.min.js" type="text/javascript" charset="utf-8"></script>
@@ -195,6 +558,8 @@
   <script src="scripts/clock/js/clock.js" type="text/javascript" charset="utf-8"></script>
 
   <!-- endbuild -->
+  <script type="text/javascript" src="http://web4.deskline.net/accoktn/de/qfind/script/KTN/e1b852f7-8e95-4a5b-813f-c7131e67de08/moessler?pageType=4&containerId=qfindformId&lkCS=moessler"></script>
+
 </body>
 
 </html>

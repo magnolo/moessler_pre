@@ -43,6 +43,7 @@ html {
 }
 body {
   height: 100%;
+  overflow-x: hidden !important;
 }
 #tubular-shield {
   background: rgba(0, 0, 0, .2);
@@ -131,7 +132,7 @@ textarea {
    ========================================================================== */
 
 body {
-  background: url('../images/bg/bg1.jpg') no-repeat center center fixed;
+  background: url('../img/bg/bg1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -172,13 +173,18 @@ body {
   vertical-align: middle;
   width: 100%;
   z-index: 50;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
 }
 .mainarea-content {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  padding: 46px 0;
+  padding: 0px 0;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -209,16 +215,22 @@ body {
   -webkit-transform: scale(1, 1);
   /* Chrome, Safari, Opera */
   transform: scale(1, 1);
+  max-height: 100%;
 }
 .side-page {
   width: 100%;
   top: 50%;
   position: absolute;
   z-index: 1;
+  overflow-y: auto;
+}
+.side-page.active {
+  max-height: 100%;
 }
 .side-page .container {
   width: 100%;
   max-width: 800px;
+  padding-bottom: 5em;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -286,7 +298,7 @@ body {
 
 .mainarea h2 {
   margin: 0 0 57px 0;
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Exo 2', sans-serif !important;
   font-weight: 100;
   font-size: 72px;
   color: #fffefe;
@@ -295,14 +307,14 @@ body {
 .mainarea h3 {
   margin: 0 0 35px 0;
   color: #fffefe;
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Exo 2', sans-serif !important;
   font-weight: 100;
   font-size: 36px;
   text-align: center;
 }
 .mainarea p {
   margin: 0 0 24px 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-weight: 300;
   color: #fffefe;
   font-size: 18px;
@@ -613,9 +625,10 @@ body {
 .show_toggle {
   display: none;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  left: -5em;
+  top: 0em;
+  padding: 1em;
+  padding-right: 2em;
   text-align: center;
 }
 .show_toggle a {
@@ -670,15 +683,34 @@ body {
   border: none;
 }
 .main-menu-container {
-  position: absolute;
+  position: fixed;
   left: 100px;
   bottom: 50px;
   z-index: 999;
+}
+.main-menu-container .logo, .main-menu-container i {
+  display: none;
+}
+.main-menu-container .logo img {
+  margin: 2em;
+  max-width: 100%;
+  width: 230px
 }
 .main-menu-container .main-menu {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.main-menu-container .copyright {
+  position: absolute;
+  display: none;
+  bottom: 0px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 100;
+  font-size: 0.6em;
+  padding: 1em;
+  text-align: left;
+  left: 15px;
 }
 .main-menu li {
   float: left;
@@ -720,7 +752,7 @@ body {
 */
 
 .social-container {
-  position: absolute;
+  position: fixed;
   bottom: 56px;
   right: 50px;
   z-index: 50;
@@ -1031,4 +1063,66 @@ footer {
   position: absolute;
   top: 0;
   z-index: -1;
+}
+#logo {
+  max-width: 100%;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+}
+.form-container {
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5em;
+}
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 35px;
+  text-align: center;
+  padding: 0 43px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #cdcfd0;
+  background: none;
+  color: #ffffff;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.25);
+}
+.btn:hover {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+}
+a {
+  color: #e4e38d;
+}
+table {
+  color: #fff;
+  text-align: left;
+  margin-bottom: 5em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+table tr {
+  background-color: rgba(0, 0, 0, .2);
+}
+table tr td {
+  padding: 1%;
+  width: 98%;
+}
+table tr td:first-child {
+  background: rgba(0, 0, 0, 0.5);
+  text-align: right;
+}
+table tr td:first-child span {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 100;
+  font-style: italic;
+}
+.big-image {
+  max-height: 400px;
+  margin-bottom: 2em;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }

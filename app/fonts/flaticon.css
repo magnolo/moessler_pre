@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("flaticon.eot");
+  src: url("flaticon.eot#iefix") format("embedded-opentype"), url("flaticon.woff") format("woff"), url("flaticon.ttf") format("truetype"), url("flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 1em;
+  font-style: normal;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.flaticon-award:before {
+  content: "\e000";
+}
+.flaticon-backpack:before {
+  content: "\e001";
+}
+.flaticon-house:before {
+  content: "\e002";
+}
+.flaticon-book:before {
+  content: "\e003";
+}
+.flaticon-books:before {
+  content: "\e004";
+}
+.flaticon-bow:before {
+  content: "\e005";
+}
+.flaticon-tend:before {
+  content: "\e006";
+}
+.flaticon-caravan-car:before {
+  content: "\e007";
+}
+.flaticon-caravan:before {
+  content: "\e008";
+}
+.flaticon-carwash:before {
+  content: "\e009";
+}
+.flaticon-direction:before {
+  content: "\e00a";
+}
+.flaticon-electricity:before {
+  content: "\e00b";
+}
+.flaticon-ente:before {
+  content: "\e00c";
+}
+.flaticon-fire:before {
+  content: "\e00d";
+}
+.flaticon-football:before {
+  content: "\e00e";
+}
+.flaticon-grill:before {
+  content: "\e00f";
+}
+.flaticon-lake:before {
+  content: "\e010";
+}
+.flaticon-rest:before {
+  content: "\e011";
+}
+.flaticon-mobile-home:before {
+  content: "\e012";
+}
+.flaticon-mountain:before {
+  content: "\e013";
+}
+.flaticon-multiple25:before {
+  content: "\e014";
+}
+.flaticon-family:before {
+  content: "\e015";
+}
+.flaticon-tabletennis:before {
+  content: "\e016";
+}
+.flaticon-plant:before {
+  content: "\e017";
+}
+.flaticon-restaurant:before {
+  content: "\e018";
+}
+.flaticon-playground:before {
+  content: "\e019";
+}
+.flaticon-pool:before {
+  content: "\e01a";
+}
+.flaticon-trash:before {
+  content: "\e01b";
+}
+.flaticon-sauna:before {
+  content: "\e01c";
+}
+.flaticon-television:before {
+  content: "\e01d";
+}
+.flaticon-shopping:before {
+  content: "\e01e";
+}
+.flaticon-shower:before {
+  content: "\e01f";
+}
+.flaticon-sink:before {
+  content: "\e020";
+}
+.flaticon-sleeping:before {
+  content: "\e021";
+}
+.flaticon-swimmer:before {
+  content: "\e022";
+}
+.flaticon-swing:before {
+  content: "\e023";
+}
+.flaticon-tea:before {
+  content: "\e024";
+}
+.flaticon-reception:before {
+  content: "\e025";
+}
+.flaticon-tree:before {
+  content: "\e026";
+}
+.flaticon-volleyball:before {
+  content: "\e027";
+}
+.flaticon-washing:before {
+  content: "\e028";
+}
+.flaticon-washingmashine:before {
+  content: "\e029";
+}
+.flaticon-water:before {
+  content: "\e02a";
+}
+.flaticon-wifi:before {
+  content: "\e02b";
+}

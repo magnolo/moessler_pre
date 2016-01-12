@@ -81,6 +81,7 @@
 		});
 
 		$('.side-page').click(function () {
+
 			var curPage = $(this).attr('id');
 			$('.main-menu li').removeClass('active');
 			$('.main-menu li a[data-page="' + curPage + '"]').parent().addClass('active');
@@ -90,13 +91,14 @@
 			$(this).addClass('active');
 		});
 
-		$('.main-menu a:not(.home-link)').click(function () {
+		$('.main-menu a:not(.home-link), .to-link').click(function () {
+			$('body').removeClass('menu_show');
 			$('#clock').removeClass('active');
 			$('.mainarea-content').addClass('active');
 			$('.close').addClass('active');
 			var curPage = $(this).attr('data-page');
 			$('.main-menu li').removeClass('active');
-			$(this).parent().addClass('active');
+			$(this).parent('li').addClass('active');
 			$('.mainarea-content > div').removeClass('active').removeClass('went-left').removeClass('went-right');
 			$('#' + curPage + '').prev().addClass('side-left').addClass('went-left');
 			$('#' + curPage + '').next().addClass('side-right').addClass('went-right');
@@ -105,6 +107,7 @@
 
 		$('.close').click(function (e) {
 			e.preventDefault();
+						$('body').removeClass('menu_show');
 			$('#clock').addClass('active');
 			$('.main-menu li').removeClass('active');
 			$('.close').removeClass('active');
